@@ -289,7 +289,7 @@ namespace Pract1 {
 			this->Controls->Add(this->tabControl1);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
-			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &MyForm::MyForm_FormClosing);
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MyForm::MyForm_FormClosing_1);
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
@@ -338,8 +338,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 
 }
-private: System::Void MyForm_FormClosing(System::Object^ sender,
-	System::Windows::Forms::FormClosingEventArgs^ e) {
+private: System::Void MyForm_FormClosing_1(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
 	MessageBox::Show("Закрити програму?", "Закрити програму",
 		MessageBoxButtons::YesNoCancel, MessageBoxIcon::Information);
 	if (System::Windows::Forms::MessageBox::Show("Закрити вікно?", "Вікно буде закрите",
